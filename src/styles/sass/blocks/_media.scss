@@ -1,0 +1,610 @@
+@media (max-width: 1360px) {
+  .header__top-content {
+    font-size: 14px;
+  }
+
+  .header__bottom-content {
+    gap: 12px;
+  }
+
+  .header__catalog {
+    gap: 12px;
+  }
+
+  .catalog__button {
+    font-size: 16px;
+  }
+
+  .catalog__search-input {
+    font-size: 16px;
+  }
+
+  .catalog__filter {
+    font-size: 13px;
+  }
+
+  .control__button {
+    font-size: 13px;
+  }
+
+  //Карточка категории
+  .categories__card-link--main {
+    font-size: 15px;
+  }
+
+  .categories__card-link--additional {
+    font-size: 13px;
+  }
+
+  .categories__card-link--all {
+    font-size: 13px;
+  }
+
+  //Табы
+  .product__tabs-nav {
+    width: 93%;
+  }
+
+  .product__tabs-button {
+    font-size: 15px;
+  }
+
+  .product__tabs-link {
+    font-size: 13px;
+  }
+
+  //Карточка товара
+  .card__discount {
+    font-size: 12px;
+  }
+
+  .card__discount-percent {
+    font-size: 12px;
+  }
+
+  .card__price {
+    font-size: 18px;
+  }
+
+  .card__description {
+    font-size: 14px;
+  }
+
+  .card__availability {
+    font-size: 12px;
+
+    & span {
+      font-size: 12px;
+    }
+  }
+
+  .product__card-button {
+    font-size: 16px;
+  }
+
+  //Футер
+  .footer__columns {
+    gap: 20px;
+  }
+
+  //Колонка с информацией
+  .footer__info-description {
+    font-size: 14px;
+  }
+
+  .info__address-title {
+    font-size: 14px;
+  }
+
+  .info__address {
+    font-size: 12px;
+  }
+
+  .info__time-title {
+    font-size: 14px;
+  }
+
+  .info__time {
+    font-size: 12px;
+  }
+
+  //Колонка с навигацией
+  .footer__column-title {
+    font-size: 14px;
+  }
+
+  .footer__nav-link {
+    font-size: 12px;
+  }
+
+  //Колонка с контактами
+  .call__link-footer {
+    font-size: 14px;
+  }
+
+  .mail__link-footer {
+    font-size: 14px;
+  }
+
+  .call__link-order-footer {
+    font-size: 14px;
+  }
+
+  //Колонка с уравлением
+  .footer__form-input {
+    font-size: 16px;
+  }
+
+  .footer__form-description {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header__top-content {
+    font-size: 12px;
+  }
+
+  .header__catalog-filter {
+    width: auto;
+  }
+
+  .catalog__filter:first-child {
+    display: none;
+  }
+}
+
+@media (max-width: 1130px) {
+  .call__link:first-child {
+    display: none;
+  }
+
+  .header__catalog-filter {
+    display: none;
+  }
+
+  .footer__form-button {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header__logo-image {
+    width: 36px;
+    // height: 36px;
+  }
+
+  .nav__list {
+    flex-direction: column;
+  }
+
+  .nav__list-link {
+    color: #667085;
+  }
+
+  .header__catalog-search {
+    max-width: 100%;
+
+    align-items: center;
+    gap: 8px;
+  }
+
+  .catalog__button {
+    max-width: 100%;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .catalog__search-form {
+    max-width: 100%;
+  }
+
+  .catalog__search-input {
+    font-size: 16px;
+  }
+
+  .header__catalog-filter {
+    display: none;
+  }
+
+  .header__control {
+    gap: 2px;
+  }
+
+  .header__control-button {
+    font-size: 0;
+    padding: 8px 8px;
+
+    gap: 0;
+
+    border: none;
+  }
+
+  .control__button-counter {
+    font-size: 10px;
+  }
+
+  // Промо
+  .promo {
+    padding: 24px 0;
+  }
+
+  //Промо свайпер
+  .swiper-pagination {
+    bottom: var(--swiper-pagination-bottom, 8px) !important;
+    padding: 3px 4px;
+    width: 116px !important;
+  }
+
+  //Категории
+  .categories__cards {
+    flex-wrap: wrap;
+  }
+
+  //Табы
+  .product__tabs-nav {
+    width: 100%;
+  }
+
+  .product__tabs-content {
+    flex-direction: column;
+  }
+
+  .product__tabs-list {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .product__tabs-item {
+    max-width: 100%;
+  }
+
+  .product__tabs-item::after {
+    display: none;
+  }
+
+  .product__tabs-item:first-child {
+    .product__tabs-button {
+      border-radius: 8px;
+    }
+  }
+
+  .product__tabs-button {
+    max-width: 100%;
+
+    font-size: 16px;
+
+    border-radius: 8px;
+  }
+
+  .product__tabs-link {
+    font-size: 16px;
+  }
+
+  //Свайпер
+  .swiper2 {
+    margin-bottom: 32px;
+  }
+
+  //Карточка товара
+
+  .card__discount {
+    font-size: 13px;
+  }
+
+  .card__discount-percent {
+    font-size: 12px;
+  }
+
+  .card__price {
+    font-size: 18px;
+  }
+
+  .card__description {
+    font-size: 14px;
+  }
+
+  .card__availability {
+    font-size: 14px;
+
+    & span {
+      font-size: 12px;
+    }
+  }
+
+  .product__card-button {
+    font-size: 16px;
+  }
+
+  //Футер
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer__columns {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "info"
+      "navigation"
+      "contacts"
+      "control";
+  }
+
+  //Колонка с информацией
+  .footer__column-info {
+    row-gap: 16px;
+  }
+
+  .footer__info-image {
+    margin-bottom: 8px;
+
+    width: 152px;
+  }
+
+  .footer__info-description {
+    font-size: 14px;
+  }
+
+  .column-info__bottom {
+    row-gap: 8px;
+  }
+
+  .info__address-title {
+    font-size: 14px;
+  }
+
+  .info__address {
+    font-size: 12px;
+
+    &::before {
+      font-size: 14px;
+    }
+  }
+
+  .info__time-title {
+    font-size: 14px;
+  }
+
+  .info__time {
+    font-size: 12px;
+  }
+
+  //Колонка с навигацией
+  .column-navigation__columns {
+    column-gap: 16px;
+  }
+
+  .footer__column-title {
+    font-size: 14px;
+
+    margin-bottom: 8px;
+  }
+
+  .footer__nav-link {
+    font-size: 12px;
+  }
+
+  //Колонка с контактами
+  .footer__column-contacts {
+    row-gap: 16px;
+  }
+
+  .footer__contacts-call {
+    max-width: 100%;
+  }
+
+  .call__link-footer {
+    font-size: 14px;
+  }
+
+  .footer__contacts-mail {
+    max-width: 100%;
+  }
+
+  .mail__link-footer {
+    font-size: 14px;
+  }
+
+  .footer__contacts-callorder {
+    max-width: 100%;
+  }
+
+  .call__link-order-footer {
+    font-size: 14px;
+  }
+
+  .footer__socials {
+    gap: 12px;
+  }
+
+  .footer__socials-link--telegram::before {
+    font-size: 24px;
+  }
+
+  .footer__socials-link--vk::before {
+    font-size: 24px;
+  }
+
+  .footer__socials-link--youtube::before {
+    font-size: 24px;
+  }
+
+  .footer__payments {
+    column-gap: 12px;
+  }
+
+  .footer__payments-image {
+    width: 32px;
+    height: 20.211px;
+  }
+
+  //Колонка с уравлением
+  .footer__column-control {
+    row-gap: 16px;
+  }
+
+  .control__button--footer {
+    max-width: 100%;
+
+    font-size: 14px;
+  }
+
+  .footer__form {
+    flex-direction: column;
+    gap: 8px;
+
+    max-width: 100%;
+  }
+
+  .footer__form-input {
+    font-size: 16px;
+
+    border-radius: 8px;
+  }
+
+  .footer__form-button {
+    font-size: 16px;
+
+    border-radius: 8px;
+
+    max-width: 100%;
+  }
+
+  .footer__form-description {
+    font-size: 10px;
+  }
+
+  .to-top {
+    top: auto;
+    bottom: -40px;
+    right: 140px;
+  }
+}
+
+// @media (max-width: 795px) {
+//   .categories__card {
+//     max-width: 276px;
+//   }
+// }
+
+@media (max-width: 815px) {
+  .categories__card {
+    max-width: 276px;
+  }
+}
+
+@media (max-width: 768px) {
+  .call__link:first-child {
+    display: none;
+  }
+}
+
+@media (max-width: 660px) {
+  //Промо
+  .promo__content {
+    column-gap: 12px;
+    row-gap: 12px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+      "slider"
+      "links";
+  }
+}
+
+@media (max-width: 615px) {
+  .categories__cards {
+    column-gap: 12px;
+    row-gap: 24px;
+  }
+
+  .categories__card {
+    max-width: 206px;
+  }
+}
+
+@media (max-width: 620px) {
+  .call__link-order {
+    display: none;
+  }
+}
+
+@media (max-width: 595px) {
+  .categories__card {
+    max-width: 206px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header__contacts-mail {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .modal__content-title {
+    font-size: 16px;
+  }
+
+  .modal__form-label {
+    font-size: 14px;
+  }
+
+  .modal__form-input {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 455px) {
+  .categories__card {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 343px) {
+  .categories__card {
+    max-width: 376px;
+  }
+}
+
+@media (max-width: 360px) {
+  .catalog__button {
+    max-width: 264px;
+  }
+}
+
+@media (max-width: 345px) {
+  .header__top-content {
+    font-size: 9px;
+  }
+
+  .header__contacts-mobile {
+    font-size: 13px;
+  }
+
+  .modal__content-title {
+    font-size: 15px;
+  }
+
+  .modal__form-label {
+    font-size: 13px;
+  }
+
+  .modal__form-input {
+    font-size: 11px;
+  }
+
+  .modal__form-button {
+    font-size: 15px;
+  }
+
+  .catalog__button {
+    padding-left: 8px;
+  }
+}

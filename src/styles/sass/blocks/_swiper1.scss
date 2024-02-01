@@ -1,0 +1,30 @@
+.swiper1 {
+  padding: 2px;
+  width: 100% !important;
+}
+
+.swiper1 .swiper-wrapper {
+  width: 100% !important;
+}
+
+.swiper1 .swiper-slide {
+  width: 100% !important;
+  // max-width: 950px !important;
+  // width: 100% !important;
+}
+
+.swiper-pagination {
+  padding: 6px 8px;
+  border-radius: 20px;
+
+  bottom: 30px !important;
+
+  background-color: $ui-blue;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+
+  background-color: $ui-white;
+}

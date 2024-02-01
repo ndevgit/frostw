@@ -1,0 +1,60 @@
+.swiper2 {
+  overflow: visible;
+  width: 100%;
+}
+
+// .swiper2 {
+//   & .swiper-slide {
+//     width: 320px !important;
+//   }
+// }
+
+.swiper-button-next {
+  cursor: pointer;
+  text-align: center;
+
+  width: 45px;
+  height: 45px;
+
+  padding: 10px;
+  border-radius: 23px;
+  border: 1px solid #eaeaea;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid $ui-blue;
+  }
+}
+
+.swiper-button-prev {
+  cursor: pointer;
+  text-align: center;
+
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+
+  border-radius: 23px;
+  border: 1px solid #eaeaea;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid $ui-blue;
+  }
+}
+
+.swiper-button-next:after {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.swiper-button-prev:after {
+  font-size: 12px;
+  font-weight: 700;
+}

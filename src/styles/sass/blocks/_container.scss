@@ -1,0 +1,9 @@
+.container {
+  max-width: 1632px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.container-right {
+  padding-left: calc((100% - 1632px) / 2 + 15px);
+}

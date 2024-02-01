@@ -1,0 +1,142 @@
+.header__top {
+  background-color: $ui-white;
+}
+
+.header__top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 0;
+
+  font-size: 15px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+
+  font-weight: 500;
+}
+
+.nav__list-link {
+  text-decoration: none;
+  color: $text-black;
+
+  padding: 10px 0;
+
+  transition: 0.3s;
+
+  &:hover {
+    color: $text-blue;
+  }
+}
+
+.header__contacts {
+  font-weight: 600;
+
+  display: flex;
+  gap: 16px;
+}
+
+.header__contacts--mobile {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+
+  font-size: 14px;
+}
+
+.header__contacts-call {
+  display: flex;
+  align-items: center;
+}
+
+.header__contacts-call--mobile {
+  flex-direction: column;
+}
+
+.call__link {
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+
+  color: $text-black;
+
+  &:hover {
+    color: $text-blue;
+  }
+
+  &:first-child {
+    &::before {
+      content: url("../../../images/call.svg");
+      width: 20px;
+      height: 20px;
+
+      margin-right: 6px;
+    }
+  }
+
+  &:last-child {
+    color: $text-navy;
+
+    &:hover {
+      color: $text-blue;
+    }
+  }
+}
+
+.call__link:not(:last-child) {
+  margin-right: 16px;
+}
+
+.header__contacts-mail {
+  display: flex;
+  align-items: center;
+}
+
+.mail__link {
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+
+  color: $text-black;
+
+  &:hover {
+    color: $text-blue;
+  }
+
+  &::before {
+    content: url(../../../images/sms.svg);
+    width: 20px;
+    height: 20px;
+
+    margin-right: 6px;
+  }
+}
+
+.call__link-order {
+  letter-spacing: 0.14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+
+  color: $text-blue;
+  border-bottom: 1px solid $text-blue;
+
+  transition: 0.3s;
+
+  &:hover {
+    color: $text-navy;
+    border-bottom: 1px solid $text-navy;
+  }
+}
+
+.call__link-order--display-none {
+  display: none;
+}

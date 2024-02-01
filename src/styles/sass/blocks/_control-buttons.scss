@@ -1,0 +1,53 @@
+.control__button {
+  background-color: $ui-white;
+
+  color: $text-black;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+
+  padding: 8px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  max-width: 90px;
+  width: 100%;
+
+  cursor: pointer;
+
+  position: relative;
+
+  border-radius: 8px;
+  border: 1px solid $control-button-border;
+
+  transition: 0.3s;
+
+  &:hover {
+    color: $text-blue;
+    box-shadow: 0px 0px 0px 2px $input-border;
+  }
+}
+
+.control__button-image {
+  display: block;
+}
+
+.control__button-counter {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  background-color: $ui-navy;
+
+  color: $text-white;
+  font-size: 12px;
+  font-weight: 500;
+
+  border-radius: 100px;
+
+  padding: 0 4px;
+}
