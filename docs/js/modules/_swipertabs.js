@@ -24,12 +24,39 @@ function swipertabs() {
     slidesPerView: "auto",
     spaceBetween: 32,
 
+    pagination: {
+      el: ".swiper-pagination2",
+      clickable: true,
+      dynamicBullets: true,
+    },
+
     // Navigation arrows
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+
+  //Swiper 2 скрыть стрелки и показать пагинацию и наоборот
+  if (window.innerWidth <= 992) {
+    // скрыть кнопки навигации
+    swiper2.navigation.destroy();
+
+    swiper2.update();
+
+    // показать пагинацию
+    swiper2.pagination.render();
+  }
+
+  if (window.innerWidth > 992) {
+    // скрыть кнопки навигации
+    swiper2.navigation.init();
+
+    swiper2.update();
+
+    // скрыть пагинацию
+    swiper2.pagination.destroy();
+  }
 
   //Элементы для табов
   const tabsButtons = document.querySelectorAll("[data-tab]");

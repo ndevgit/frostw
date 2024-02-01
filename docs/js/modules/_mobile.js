@@ -131,6 +131,7 @@ function mobile() {
     callLinkOrderMobile.addEventListener("click", () => {
       overlay.classList.add("overlay--visible");
       modal.classList.add("modal--visible");
+
       disableScroll();
     });
 

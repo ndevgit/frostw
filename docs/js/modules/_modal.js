@@ -60,7 +60,7 @@ modalButtonClose.addEventListener("click", () => {
   enableScroll();
 });
 
-//Закрытие модального окна откликиванием мыши
+// Закрытие модального окна откликиванием мыши
 overlay.addEventListener("click", function (event) {
   if (event.target == overlay) {
     overlay.classList.remove("overlay--visible");
