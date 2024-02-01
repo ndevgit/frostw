@@ -178,5 +178,4 @@ function mobile() {
     restoreElements();
   }
 }
-
 export default mobile;
