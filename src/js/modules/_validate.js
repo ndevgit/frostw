@@ -1,4 +1,4 @@
-import { overlay, disableScroll, enableScroll } from "./_modal.js";
+import { overlay, disableScroll, enableScroll, modal } from "./_modal.js";
 
 function formValidate() {
   function validation(form) {
@@ -42,6 +42,7 @@ function formValidate() {
     return result;
   }
 
+  //Оповещение об отправке формы
   function createModal() {
     const modalSend = document.createElement("div");
     modalSend.className = "modal-send";
@@ -67,14 +68,22 @@ function formValidate() {
     }, 1000);
   }
 
-  const footerForm = document.querySelector(".footer__form");
-  footerForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  const form = document.querySelectorAll(".form");
+  form.forEach((formElement) => {
+    formElement.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    if (validation(footerForm) == true) {
-      overlay.classList.add("overlay--visible");
-      createModal();
-    }
+      if (validation(this) == true) {
+        //Отображение оверлея
+        overlay.classList.add("overlay--visible");
+
+        //Скрываем модальное окно
+        modal.classList.remove("modal--visible");
+
+        //Оповещение об отправке формы
+        createModal();
+      }
+    });
   });
 }
 

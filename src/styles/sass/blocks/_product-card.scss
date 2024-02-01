@@ -123,7 +123,7 @@
   margin-bottom: 12px;
 
   &::before {
-    content: url(../../../images/check.svg);
+    content: url(../../images/check.svg);
     width: 16px;
     height: 16px;
   }
@@ -141,7 +141,7 @@
   color: $text-yellow;
 
   &::before {
-    content: url(../../../images/dot.svg);
+    content: url(../../images/dot.svg);
     width: 16px;
     height: 16px;
   }
@@ -186,7 +186,7 @@
   transition: 0.3s;
 
   &::before {
-    content: url(../../../images/shopping-cart.svg);
+    content: url(../../images/shopping-cart.svg);
     width: 24px;
     height: 24px;
   }

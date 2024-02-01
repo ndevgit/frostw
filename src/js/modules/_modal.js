@@ -6,6 +6,7 @@ const modal = document.querySelector(".modal");
 //Ссылки-кнопки
 const callLinkOrder = document.querySelector(".call__link-order");
 const callLinkOrderFooter = document.querySelector(".call__link-order-footer");
+const callOrder = document.querySelectorAll(".call-order");
 
 //Оверлей
 const overlay = document.querySelector(".overlay");
@@ -14,12 +15,14 @@ const overlay = document.querySelector(".overlay");
 const modalButtonClose = document.querySelector(".modal__button-close");
 
 //Модальное окно
-callLinkOrder.addEventListener("click", () => {
-  overlay.classList.add("overlay--visible");
-  modal.classList.add("modal--visible");
+callOrder.forEach((callOrderElement) => {
+  callOrderElement.addEventListener("click", () => {
+    overlay.classList.add("overlay--visible");
+    modal.classList.add("modal--visible");
 
-  //Отключение скролла
-  disableScroll();
+    //Отключение скролла
+    disableScroll();
+  });
 });
 
 //Отключение скролла и прыжка контента
@@ -47,15 +50,6 @@ function enableScroll() {
 
   document.body.style.paddingRight = "0px";
 }
-
-//Модальное окно открывающееся из футера
-callLinkOrderFooter.addEventListener("click", () => {
-  overlay.classList.add("overlay--visible");
-  modal.classList.add("modal--visible");
-
-  //Отключение скролла
-  disableScroll();
-});
 
 //Закрытие модального окна
 modalButtonClose.addEventListener("click", () => {

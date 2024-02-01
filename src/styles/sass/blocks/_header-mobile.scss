@@ -78,7 +78,7 @@
 
 .call__link-mobile:first-child {
   &::before {
-    content: url(../../../images/call.svg);
+    content: url(../../images/call.svg);
     width: 20px;
     height: 20px;
     margin-right: 6px;
@@ -108,7 +108,7 @@
   }
 
   &::before {
-    content: url(../../../images/sms.svg);
+    content: url(../../images/sms.svg);
     width: 20px;
     height: 20px;
 
@@ -154,7 +154,7 @@
   margin-bottom: 12px;
 
   &::before {
-    content: url("../../../images/call-white.svg");
+    content: url("../../images/call-white.svg");
     width: 20px;
     height: 20px;
     margin-right: 6px;
