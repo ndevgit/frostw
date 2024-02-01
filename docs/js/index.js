@@ -1,9 +1,9 @@
-import swipertabs from "modules/_swipertabs.js";
+import swipertabs from "_swipertabs.js";
 // import modal from "./modules/_modal.js";
-import { disableScroll, enableScroll } from "modules/_modal.js";
-import mobile from "modules/_mobile.js";
-import formValidate from "modules/_validate.js";
-import scroll from "modules/_scroll.js";
+import { disableScroll, enableScroll } from "_modal.js";
+import mobile from "_mobile.js";
+import formValidate from "_validate.js";
+import scroll from "_scroll.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   //Свайпер
