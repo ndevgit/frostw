@@ -57,7 +57,7 @@ function formValidate() {
 
     modalSendContent.append(modalSendText);
     modalSend.append(modalSendContent);
-    overlay.append(modalSend);
+    overlay.prepend(modalSend);
 
     disableScroll();
 

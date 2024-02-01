@@ -1,4 +1,4 @@
-import { disableScroll, enableScroll, overlay } from "./_modal.js";
+import { disableScroll, enableScroll, overlay, modal } from "./_modal.js";
 
 function mobile() {
   //Элементы для переноса элементов при мобильном разрешении
@@ -130,7 +130,7 @@ function mobile() {
     //Открытие модального окна по кнопке заказать звонок
     callLinkOrderMobile.addEventListener("click", () => {
       overlay.classList.add("overlay--visible");
-
+      modal.classList.add("modal--visible");
       disableScroll();
     });
 
