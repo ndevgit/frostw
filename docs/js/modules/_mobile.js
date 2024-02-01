@@ -1,4 +1,4 @@
-import { disableScroll, enableScroll, overlay } from "./_modal.js";
+import { disableScroll, enableScroll, overlay } from "_modal.js";
 
 function mobile() {
   //Элементы для переноса элементов при мобильном разрешении
