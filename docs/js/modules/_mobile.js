@@ -1,82 +1,99 @@
 import { disableScroll, enableScroll, overlay, modal } from "./_modal.js";
 
-function mobile() {
-  //Элементы для переноса элементов при мобильном разрешении
+// function mobile() {
 
-  //Элементы хедера
-  //Хедер контент верхний
-  const headerTopContent = document.querySelector(".header__top-content");
-  //Навигация
-  const headerNav = document.querySelector(".nav");
-  //Контакты
-  const headerContacts = document.querySelector(".header__contacts");
+//Элементы для переноса элементов при мобильном разрешении
+//Элементы хедера
+//Хедер контент верхний
+const headerTopContent = document.querySelector(".header__top-content");
+//Навигация
+const headerNav = document.querySelector(".nav");
+//Контакты
+const headerContacts = document.querySelector(".header__contacts");
+//Контакты телефон
+const headerContactsCall = document.querySelector(".header__contacts-call");
+//Контакты телефон ссылка
+const callLink = document.querySelector(".call__link");
+//Контакты почта
+const headerContactsMail = document.querySelector(".header__contacts-mail");
+//Контакты заказать звонок ссылка
+const callLinkOrder = document.querySelector(".call__link-order");
 
-  //Хедер контент нижний
-  const headerBottomContent = document.querySelector(".header__bottom-content");
-  //Лого
-  const headerLogo = document.querySelector(".header__logo");
-  //Лого картинка
-  const headerLogoImage = document.querySelector(".header__logo-image");
-  //Каталог
-  const headerSearch = document.querySelector(".header__catalog-search");
-  //Форма поиска
-  const headerSearchForm = document.querySelector(".catalog__search-form");
-  //Кнопки управления
-  const headerControl = document.querySelector(".header__control");
+//Хедер контент нижний
+const headerBottomContent = document.querySelector(".header__bottom-content");
+//Лого
+const headerLogo = document.querySelector(".header__logo");
+//Лого картинка
+const headerLogoImage = document.querySelector(".header__logo-image");
+//Каталог
+const headerCatalogSearch = document.querySelector(".header__catalog-search");
+//Кнопка в каталоге
+const catalogButton = document.querySelector(".catalog__button");
+//Бургер в кнопке каталога
+const burger = document.querySelector(".burger");
+//Форма поиска
+const headerSearchForm = document.querySelector(".catalog__search-form");
+//Кнопки управления
+const headerControl = document.querySelector(".header__control");
 
-  //Элементы мобильного хедера
-  //Мобильная обертка для формы поиска
-  const mobileFormWrapper = document.querySelector(".mobile__form-wrapper");
-  //Мобильная обертка для контактов
-  const mobileContactsWrapper = document.querySelector(
-    ".mobile__contacts-wrapper"
-  );
-  //Мобильная обертка для навигации
-  const mobileNavWrapper = document.querySelector(".mobile__nav-wrapper");
-  //Мобильная обертка для кнопок
-  const mobileButtonsWrapper = document.querySelector(
-    ".mobile__buttons-wrapper"
-  );
+//Элементы мобильного хедера
+//Мобильный хедер
+const headerMobile = document.querySelector(".header__mobile");
+//Мобильная обертка для формы поиска
+const mobileFormWrapper = document.querySelector(".mobile__form-wrapper");
+//Мобильная обертка для контактов
+const mobileContactsWrapper = document.querySelector(
+  ".mobile__contacts-wrapper"
+);
+//Мобильная обертка для навигации
+const mobileNavWrapper = document.querySelector(".mobile__nav-wrapper");
+//Мобильная обертка для кнопок
+const mobileButtonsWrapper = document.querySelector(".mobile__buttons-wrapper");
 
-  //Элементы обертки под карточки продуктов
-  const productCardsContent = document.querySelector(".product__cards-content");
+//Элементы обертки под карточки продуктов
+const productCardsContent = document.querySelector(".product__cards-content");
 
-  //Элементы табов
-  const productTabsContent = document.querySelector(".product__tabs-content");
-  const productTabsLink = document.querySelector(".product__tabs-link");
+//Элементы табов
+const productTabsContent = document.querySelector(".product__tabs-content");
+const productTabsLink = document.querySelector(".product__tabs-link");
 
-  //Перенос элементов
-  function moveElements() {
-    //Элементы для мобильного меню
-    const headerMobile = document.querySelector(".header__mobile");
-    const headerCatalogSearch = document.querySelector(
-      ".header__catalog-search"
-    );
-    const catalogButton = document.querySelector(".catalog__button");
-    const burger = document.querySelector(".burger");
+//Флаги для проверки запуска функций
+let moveElementsStarted = false;
+let restoreElementsStarted = false;
 
-    //Открытие мобильного меню
-    //Копирование и перенос бургера из кнопки каталога
-    let isScrollDisabled = false;
+//Создание элементов
+const headerContactsMobile = document.createElement("div");
+const mobileButtons = document.createElement("div");
+mobileButtons.className = "mobile-buttons";
 
-    const burgerMobile = burger.cloneNode(true);
-    burgerMobile.className = "burger--mobile";
-    headerCatalogSearch.prepend(burgerMobile);
+//Клонирование элементов
+//Клонирование телефонов
+const headerContactsCallMobile = headerContactsCall.cloneNode(true);
+headerContactsCallMobile.className = "header__contacts-call-mobile";
+headerContactsCallMobile.childNodes.forEach((childElement) => {
+  childElement.className = "call__link-mobile";
+});
+//Клонирование первого телефона
+const callLinkMobileButton = callLink.cloneNode(true);
+callLinkMobileButton.className = "call__link-mobile-button";
+//Клонирование почты
+const headerContactsMailMobile = headerContactsMail.cloneNode(true);
+headerContactsMailMobile.className = "header__contacts-mail-mobile";
+headerContactsMailMobile.childNodes.forEach((childElement) => {
+  childElement.className = "mail__link-mobile";
+});
 
-    burgerMobile.addEventListener("click", () => {
-      headerMobile.classList.toggle("header__mobile--visible");
-      burgerMobile.classList.toggle("burger--mobile-open");
-      catalogButton.classList.toggle("catalog__button--padding");
+//Клонирование ссылки заказать звонок
+const callLinkOrderMobile = callLinkOrder.cloneNode(true);
+callLinkOrderMobile.className = "call__link-order-mobile";
+callLinkOrderMobile.classList.add("call-link");
 
-      if (!isScrollDisabled) {
-        disableScroll();
-        isScrollDisabled = true;
-      } else {
-        enableScroll();
-        isScrollDisabled = false;
-      }
-    });
+//Флаг для проверки скролла
+let scrollDisabled = false;
 
+//Перенос элементов
+function moveElements() {
+  if (!moveElementsStarted && window.innerWidth <= 992) {
     //Лого
     headerTopContent.prepend(headerLogo);
     headerLogoImage.src = "images/logo-mobile.svg";
@@ -84,55 +101,23 @@ function mobile() {
     //Навигация
     mobileNavWrapper.append(headerNav);
 
-    //Контакты
-    const mobileContacts = headerTopContent
-      .querySelector(".header__contacts")
-      .cloneNode(true);
+    //Бургер + открытие мобильного меню
+    headerCatalogSearch.prepend(burger);
+    burger.classList.remove("burger");
+    burger.classList.add("burger--mobile");
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("burger--mobile-open");
+      catalogButton.classList.toggle("catalog__button--padding");
+      headerMobile.classList.toggle("header__mobile--visible");
 
-    mobileContacts.className = "header__contacts-mobile";
-    mobileContactsWrapper.append(mobileContacts);
-
-    //Контакты телефон
-    const mobileContactsCall = mobileContacts.querySelector(
-      ".header__contacts-call"
-    );
-    mobileContactsCall.className = "header__contacts-call-mobile";
-
-    //Контакты телефон ссылки
-    const callLinkMobile = mobileContactsCall.querySelectorAll(".call__link");
-    callLinkMobile.forEach((callLinkMobileElement) => {
-      callLinkMobileElement.className = "call__link-mobile";
-    });
-
-    //Контакты почта
-    const mobileContactsMail = mobileContacts.querySelector(
-      ".header__contacts-mail"
-    );
-    mobileContactsMail.className = "header__contacts-mail-mobile";
-
-    //Контакты почта ссылки
-    const mailLinkMobile = mobileContactsMail.querySelector(".mail__link");
-    mailLinkMobile.className = "mail__link-mobile";
-
-    //Делаем копию ссылки из контактов телефон ссылки
-    const callLinkMobileButton = callLinkMobile[0].cloneNode(true);
-    callLinkMobileButton.className = "call__link-mobile-button";
-
-    mobileButtonsWrapper.prepend(callLinkMobileButton);
-
-    //Контакты заказать звонок ссылка
-    const callLinkOrderMobile =
-      mobileContacts.querySelector(".call__link-order");
-    callLinkOrderMobile.className = "call__link-order-mobile";
-
-    mobileButtonsWrapper.append(callLinkOrderMobile);
-
-    //Открытие модального окна по кнопке заказать звонок
-    callLinkOrderMobile.addEventListener("click", () => {
-      overlay.classList.add("overlay--visible");
-      modal.classList.add("modal--visible");
-
-      disableScroll();
+      //Отключение скролла
+      if (!scrollDisabled) {
+        disableScroll();
+        scrollDisabled = true;
+      } else {
+        enableScroll();
+        scrollDisabled = false;
+      }
     });
 
     //Форма поиска
@@ -141,11 +126,37 @@ function mobile() {
     //Кнопки управления
     headerTopContent.append(headerControl);
 
+    //Контакты
+    headerContactsMobile.classList.add("header__contacts-mobile");
+    headerContactsMobile.append(headerContactsCallMobile);
+    headerContactsMobile.append(headerContactsMailMobile);
+    mobileContactsWrapper.append(headerContactsMobile);
+
+    //Нижняя часть мобильного меню
+    mobileButtonsWrapper.append(mobileButtons);
+    mobileButtons.prepend(callLinkMobileButton);
+    mobileButtons.append(callLinkOrderMobile);
+    //Открытие модального окна
+    callLinkOrderMobile.addEventListener("click", () => {
+      overlay.classList.add("overlay--visible");
+      modal.classList.add("modal--visible");
+
+      //Отключение скролла
+      disableScroll();
+    });
+
     //Ссылка в табах
     productCardsContent.append(productTabsLink);
-  }
 
-  function restoreElements() {
+    //Флаги для проверки запуска функций
+    moveElementsStarted = true;
+    restoreElementsStarted = false;
+    // console.log("moveElementsStarted true");
+  }
+}
+
+function restoreElements() {
+  if (!restoreElementsStarted && window.innerWidth > 992) {
     //Лого
     headerBottomContent.prepend(headerLogo);
     headerLogoImage.src = "images/logo.png";
@@ -153,30 +164,43 @@ function mobile() {
     //Навигация
     headerTopContent.prepend(headerNav);
 
-    //Контакты
-    headerTopContent.append(headerContacts);
+    //Бургер
+    catalogButton.prepend(burger);
+    burger.classList.remove("burger--mobile");
+    burger.classList.add("burger");
+    burger.removeEventListener("click", () => {
+      burger.classList.toggle("burger--mobile-open");
+      catalogButton.classList.toggle("catalog__button--padding");
+      headerMobile.classList.toggle("header__mobile--visible");
+    });
 
     //Форма поиска
-    headerSearch.append(headerSearchForm);
+    headerCatalogSearch.append(headerSearchForm);
 
     //Кнопки управления
     headerBottomContent.append(headerControl);
 
+    //Контакты
+    headerContactsMobile.remove();
+    mobileButtons.remove();
+
     //Ссылка в табах
     productTabsContent.append(productTabsLink);
-  }
 
-  // Отслеживание изменения размера страницы
-  // window.addEventListener("load");
-
-  // window.addEventListener("resize");
-
-  if (window.innerWidth <= 992) {
-    moveElements();
-  }
-
-  if (window.innerWidth > 992) {
-    restoreElements();
+    //Флаги для проверки запуска функций
+    restoreElementsStarted = true;
+    moveElementsStarted = false;
+    // console.log("restoreElementsStarted true");
   }
 }
-export default mobile;
+
+window.addEventListener("resize", () => {
+  moveElements();
+  restoreElements();
+});
+
+// }
+
+// export default mobile;
+
+export { moveElements, restoreElements, callLinkOrderMobile };

@@ -1,5 +1,6 @@
 //Элементы для модального окна
-
+//Оверлей
+const overlay = document.querySelector(".overlay");
 //Модальное окно
 const modal = document.querySelector(".modal");
 
@@ -8,13 +9,10 @@ const callLinkOrder = document.querySelector(".call__link-order");
 const callLinkOrderFooter = document.querySelector(".call__link-order-footer");
 const callOrder = document.querySelectorAll(".call-order");
 
-//Оверлей
-const overlay = document.querySelector(".overlay");
-
 //Кнопка закрытия
 const modalButtonClose = document.querySelector(".modal__button-close");
 
-//Модальное окно
+//Открытие модального окна
 callOrder.forEach((callOrderElement) => {
   callOrderElement.addEventListener("click", () => {
     overlay.classList.add("overlay--visible");
@@ -25,7 +23,7 @@ callOrder.forEach((callOrderElement) => {
   });
 });
 
-//Отключение скролла и прыжка контента
+//Отключение скролла и прыжка контента при открытии модального окна или мобильного меню
 const fixJump = document.querySelectorAll(".fix-jump");
 
 function disableScroll() {
@@ -40,7 +38,7 @@ function disableScroll() {
   document.body.style.paddingRight = paddingOffset;
 }
 
-//Включение скролла и прыжка контента
+//Включение скролла и прыжка контента при открытии модального окна или мобильного меню
 function enableScroll() {
   document.body.classList.remove("body--overflow-hidden");
 
@@ -60,7 +58,7 @@ modalButtonClose.addEventListener("click", () => {
   enableScroll();
 });
 
-// Закрытие модального окна откликиванием мыши
+//Закрытие модального окна откликиванием мыши
 overlay.addEventListener("click", function (event) {
   if (event.target == overlay) {
     overlay.classList.remove("overlay--visible");
